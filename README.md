@@ -1,26 +1,35 @@
-# hyper-sdk-react-webview
+# Hyper SDK React WebView
 
-Custom webview for a hyper-sdk webview integration.
+Custom webview for a hyper-sdk Android webview integration.
 
-## Installation
+ Installation
 
 ```sh
-npm install hyper-sdk-react-webview
+npm install --save hyper-sdk-react-webview
+```
+
+ with `yarn`
+
+```sh
+yarn add hyper-sdk-react-webview
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'hyper-sdk-react-webview';
+import HyperWebView from 'hyper-sdk-react-webview';
 
 // ...
 
-const result = await multiply(3, 7);
+const MyWebComponent = () => {
+  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />;
+}
 ```
 
-## Contributing
+## How it works
+With this package we have basically created a very thin wrapper around the `WebView` component provided by [react-native-webview](https://www.npmjs.com/package/react-native-webview). For `Android`, one can extend their view manager implementation & override the functionality as needed. After which the new class will have to be made available as a react-native component.
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+For a more detailed walk-through you can visit their docs: [Custom-Android.md](https://github.com/react-native-webview/react-native-webview/blob/v13.10.2/docs/Custom-Android.md)
 
 ## License
 

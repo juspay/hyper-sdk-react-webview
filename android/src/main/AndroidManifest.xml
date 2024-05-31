@@ -1,3 +1,3 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hypersdkreactwebview">
+          package="in.juspay.hyper.webview.react">
 </manifest>
