@@ -1,7 +1,8 @@
-import { Platform } from 'react-native';
+import { Platform, type HostComponent } from 'react-native';
 import React, { Component } from 'react';
 import { requireNativeComponent } from 'react-native';
-import { WebView } from 'react-native-webview';
+import { WebView, type WebViewProps } from 'react-native-webview';
+import type { NativeProps } from 'react-native-webview/lib/RNCWebViewNativeComponent';
 
 const LINKING_ERROR =
   `The package 'hyper-sdk-react-webview' doesn't seem to be linked. Make sure: \n\n` +
@@ -9,7 +10,7 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-export default class HyperWebView extends Component<any> {
+export default class HyperWebView extends Component<WebViewProps> {
   render() {
     return (
       <WebView
@@ -20,7 +21,9 @@ export default class HyperWebView extends Component<any> {
   }
 }
 
-const HyperWebViewManager: any = requireNativeComponent('HyperWebViewManager');
+const HyperWebViewManager: HostComponent<NativeProps> = requireNativeComponent(
+  'HyperWebViewManager'
+);
 
 if (typeof HyperWebViewManager === 'undefined') {
   throw new Error(LINKING_ERROR);

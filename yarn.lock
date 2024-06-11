@@ -7238,14 +7238,14 @@ __metadata:
     lefthook: ^1.6.15
     prettier: ^3.0.3
     react: 18.2.0
-    react-native: ^0.74.1
+    react-native: 0.74.1
     react-native-builder-bob: ^0.20.0
-    react-native-webview: ^10.0.0
+    react-native-webview: ^12.0.0
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
   peerDependencies:
-    react-native-webview: ">=10.0.0"
+    react-native-webview: ">=12.0.0"
   languageName: unknown
   linkType: soft
 
@@ -11021,19 +11021,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-webview@npm:^10.0.0":
-  version: 10.10.2
-  resolution: "react-native-webview@npm:10.10.2"
+"react-native-webview@npm:^12.0.0":
+  version: 12.4.0
+  resolution: "react-native-webview@npm:12.4.0"
   dependencies:
     escape-string-regexp: 2.0.0
     invariant: 2.2.4
   peerDependencies:
-    react-native: ">=0.60 <0.64"
-  checksum: c25c6d49b800ce3b57ff6952c5807df2b13a1b6ad42dd721e569efa4a6d18ad0945b74d864d89754d5a9ea82b67622e96f794e4e6e98faea05077a6310c0af28
+    react: "*"
+    react-native: "*"
+  checksum: f7bd69b71af6bd2f62ae290aa40d8d7e7191dd7fd451327b2b6fcde7f8035e85de89d9f8f9e6c8ca913850e0efc91e195181f41c17df68516a47ff50977a49a1
   languageName: node
   linkType: hard
 
-"react-native@npm:0.74.1, react-native@npm:^0.74.1":
+"react-native@npm:0.74.1":
   version: 0.74.1
   resolution: "react-native@npm:0.74.1"
   dependencies:

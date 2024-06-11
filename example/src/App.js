@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import HyperWebView from 'hyper-sdk-react-webview';
+
 export default function App() {
   return React.createElement(
     View,

@@ -12,6 +12,7 @@ import `in`.juspay.hyper.webview.upi.HyperWebViewServices
 class HyperWebViewManager : RNCWebViewManager() {
     override fun getName(): String = REACT_CLASS
 
+
     override fun createViewInstance(ctx: ThemedReactContext): RNCWebViewWrapper {
         val webViewWrapper = super.createViewInstance(ctx)
         attachBridge(ctx, webViewWrapper.webView)
