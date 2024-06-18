@@ -46,6 +46,7 @@ class HyperWebViewManager : RNCWebViewManager() {
         const val UPI_REQUEST_CODE = HyperWebViewServices.UPI_REQUEST_CODE
         const val REACT_CLASS = "HyperWebViewManager"
 
+       @JvmStatic
         fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             if (requestCode == UPI_REQUEST_CODE) {
                 for (service in HYPER_WEB_VIEW_SERVICES) {
