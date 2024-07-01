@@ -5,13 +5,14 @@ Custom webview for a hyper-sdk Android webview integration.
  Installation
 
 ```sh
-npm install --save https://github.com/ShreyBana/hyper-sdk-react-webview#fd70558f4b9024db8600e713b3b1eae2bf1602c0
+npm install --save https://github.com/ShreyBana/hyper-sdk-react-webview#f64f40df7dc4d6873fcf89a5ef1d8396821ef29f
+
 ```
 
  with `yarn`
 
 ```sh
-yarn add https://github.com/ShreyBana/hyper-sdk-react-webview#fd70558f4b9024db8600e713b3b1eae2bf1602c0
+yarn add https://github.com/ShreyBana/hyper-sdk-react-webview#f64f40df7dc4d6873fcf89a5ef1d8396821ef29f
 ```
 
 ## Usage
