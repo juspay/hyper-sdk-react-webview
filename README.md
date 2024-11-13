@@ -17,7 +17,9 @@ yarn add https://github.com/juspay/hyper-sdk-react-webview#945bd4a3716713762a323
 ```
 
 ## Usage
+
  Add the required intent handling in `MainActivity.kt`
+
 ```kotlin
     // ...
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -29,6 +31,7 @@ yarn add https://github.com/juspay/hyper-sdk-react-webview#945bd4a3716713762a323
 ```
 
  And then you can just start using it in react.
+
 ```js
 import HyperWebView from 'hyper-sdk-react-webview';
 
@@ -38,7 +41,9 @@ const MyWebComponent = () => {
   return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />;
 }
 ```
+
 ## How it works
+
 With this package we have basically created a very thin wrapper around the `WebView` component provided by [react-native-webview](https://www.npmjs.com/package/react-native-webview). For `Android`, one can extend their view manager implementation & override the functionality as needed. After which the new class will have to be made available as a react-native component.
 
 For a more detailed walk-through you can visit their docs: [Custom-Android.md](https://github.com/react-native-webview/react-native-webview/blob/v13.10.2/docs/Custom-Android.md)
