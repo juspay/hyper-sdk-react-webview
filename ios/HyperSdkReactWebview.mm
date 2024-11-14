@@ -1,14 +1,14 @@
-#import <React/RCTBridgeModule.h>
+//
+//  HyperSdkReactWebView.h
+//
+//  Copyright © Juspay Technologies. All rights reserved.
+//
 
-@interface RCT_EXTERN_MODULE(HyperSdkReactWebview, NSObject)
+#import <React/RCTViewManager.h>
+#import "RNCWebViewManager.h"
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+@interface RCT_EXTERN_MODULE(HyperWebViewManageriOS, RNCWebViewManager)
 
-+ (BOOL)requiresMainQueueSetup
-{
-  return NO;
-}
+RCT_EXPORT_VIEW_PROPERTY(iframeIntegration, BOOL)
 
 @end

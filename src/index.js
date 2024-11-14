@@ -15,7 +15,11 @@ export default class HyperWebView extends Component {
     });
   }
 }
-const HyperWebViewManager = requireNativeComponent('HyperWebViewManager');
+
+const HyperWebViewManager =
+  Platform.OS === 'ios'
+    ? requireNativeComponent('HyperWebViewManageriOS')
+    : requireNativeComponent('HyperWebViewManager');
 if (typeof HyperWebViewManager === 'undefined') {
   throw new Error(LINKING_ERROR);
 }

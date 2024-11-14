@@ -38,7 +38,7 @@ import HyperWebView from 'hyper-sdk-react-webview';
 // ...
 
 const MyWebComponent = () => {
-  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />;
+  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} iframeIntegration={ false } />;
 }
 ```
 
