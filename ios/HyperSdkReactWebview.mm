@@ -9,4 +9,6 @@
 
 @interface RCT_EXTERN_MODULE(HyperWebViewManageriOS, RNCWebViewManager)
 
+RCT_EXPORT_VIEW_PROPERTY(iframeIntegration, BOOL)
+
 @end

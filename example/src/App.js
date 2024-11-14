@@ -9,6 +9,7 @@ export default function App() {
     React.createElement(HyperWebView, {
       source: { uri: 'https://picasso.juspay.in/devtools/web/index.html' },
       style: { flex: 1 },
+      iframeIntegration: false,
     })
   );
 }

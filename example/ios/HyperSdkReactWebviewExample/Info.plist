@@ -50,6 +50,7 @@
 	<false/>
     <key>LSApplicationQueriesSchemes</key>
     <array>
+        <string>about</string>
         <string>credpay</string>
         <string>phonepe</string>
         <string>paytmmp</string>

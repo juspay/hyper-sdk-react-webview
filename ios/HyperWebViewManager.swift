@@ -11,6 +11,8 @@ import HyperWebView
 
 private class HyperReactWebView: RNCWebViewImpl {
     
+    @objc public var iframeIntegration = false
+    
     private var hyperWebViewServices: HyperWebViewServices?
     private weak var realNavigationDelegate: WKNavigationDelegate?
     
@@ -26,7 +28,7 @@ private class HyperReactWebView: RNCWebViewImpl {
                     wkWebView.isInspectable = true
                 }
                 wkWebView.navigationDelegate = self
-                self.hyperWebViewServices = HyperWebViewServices(webView: wkWebView, isIframeIntegration: true)
+                self.hyperWebViewServices = HyperWebViewServices(webView: wkWebView, isIframeIntegration: iframeIntegration)
             }
         }
     }
