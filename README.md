@@ -1,22 +1,35 @@
 # Hyper SDK React WebView
 
-Custom webview for a hyper-sdk Android webview integration.
+Custom webview for a hyper-sdk webview integration for react-native apps.
 
- Installation
+## Installation
 
 ```sh
-npm install --save https://github.com/juspay/hyper-sdk-react-webview#945bd4a3716713762a323b60c153c477f117fb5a
+npm install hyper-sdk-react-webview
 
 ```
 
  with `yarn`
 
 ```sh
-yarn add https://github.com/juspay/hyper-sdk-react-webview#945bd4a3716713762a323b60c153c477f117fb5a
+yarn add hyper-sdk-react-webview
 
 ```
 
+ **NOTE** please make sure that you have also installed `react-native-webview` as a dependency. Even though it's declared as a peer dependency, react-native doesn't pickup it's native-build files unless it's specified as a direct dependency of the app.
+
 ## Usage
+
+ Add our package repository to your app's `build.gradle`
+```groovy
+// ..
+allprojects {
+    repositories {
+    // ..
+        maven { url "https://maven.juspay.in/jp-build-packages/hyper-sdk/" }
+    }
+}
+```
 
  Add the required intent handling in `MainActivity.kt`
 
