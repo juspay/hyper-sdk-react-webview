@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShreyBana/hyper-sdk-react-webview.git"
+    "url": "git+https://github.com/juspay/hyper-sdk-react-webview.git"
   },
-  "author": "Shrey Bana <shrey.bana@juspay.in> (https://github.com/ShreyBana)",
+  "author": "Shrey Bana <shrey.bana@juspay.in> (https://www.juspay.in)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ShreyBana/hyper-sdk-react-webview/issues"
+    "url": "https://github.com/juspay/hyper-sdk-react-webview/issues"
   },
-  "homepage": "https://github.com/ShreyBana/hyper-sdk-react-webview#readme",
+  "homepage": "https://github.com/juspay/hyper-sdk-react-webview#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
