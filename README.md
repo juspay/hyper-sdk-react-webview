@@ -1,65 +1,84 @@
 # Hyper SDK React WebView
 
-Custom webview for a hyper-sdk webview integration for react-native apps.
+A custom webview for integrating hyper-sdk with React Native apps.
 
 ## Installation
 
+To install using npm:
+
 ```sh
 npm install hyper-sdk-react-webview
-
 ```
 
- with `yarn`
+To install using yarn:
 
 ```sh
 yarn add hyper-sdk-react-webview
-
 ```
 
- **NOTE** please make sure that you have also installed `react-native-webview` as a dependency. Even though it's declared as a peer dependency, react-native doesn't pickup it's native-build files unless it's specified as a direct dependency of the app.
+**NOTE:** Ensure that `react-native-webview` is also installed as a dependency. Although it is declared as a peer dependency, React Native requires it to be a direct dependency to include its native build files.
 
 ## Usage
 
- Add our package repository to your app's `build.gradle`
+### Android
+
+Add our package repository to your app's `build.gradle`:
+
 ```groovy
-// ..
 allprojects {
     repositories {
-    // ..
         maven { url "https://maven.juspay.in/jp-build-packages/hyper-sdk/" }
     }
 }
 ```
 
- Add the required intent handling in `MainActivity.kt`
+Add the required intent handling in `MainActivity.kt`:
 
 ```kotlin
-    // ...
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == HyperWebViewManager.UPI_REQUEST_CODE) {
-            HyperWebViewManager.onActivityResult(requestCode, resultCode, data)
-        }
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == HyperWebViewManager.UPI_REQUEST_CODE) {
+        HyperWebViewManager.onActivityResult(requestCode, resultCode, data)
     }
+}
 ```
 
- And then you can just start using it in react.
+### iOS
+
+Add URI schemes for required UPI apps in `Info.plist`:
+
+```plist
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>credpay</string>
+    <string>phonepe</string>
+    <string>paytmmp</string>
+    <string>tez</string>
+    <string>paytm</string>
+    <string>bhim</string>
+    <string>myairtel</string>
+</array>
+```
+
+Run `pod install` inside the iOS folder of your app.
+
+### React Native
+
+You can start using the component in your React Native app:
 
 ```js
 import HyperWebView from 'hyper-sdk-react-webview';
 
-// ...
-
 const MyWebComponent = () => {
-  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} iframeIntegration={ false } />;
+  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} iframeIntegration={false} />;
 }
 ```
 
 ## How it works
 
-With this package we have basically created a very thin wrapper around the `WebView` component provided by [react-native-webview](https://www.npmjs.com/package/react-native-webview). For `Android`, one can extend their view manager implementation & override the functionality as needed. After which the new class will have to be made available as a react-native component.
+This package provides a thin wrapper around the `WebView` component from [react-native-webview](https://www.npmjs.com/package/react-native-webview). For Android, you can extend the view manager implementation and override functionality as needed. The new class must then be made available as a React Native component.
 
-For a more detailed walk-through you can visit their docs: [Custom-Android.md](https://github.com/react-native-webview/react-native-webview/blob/v13.10.2/docs/Custom-Android.md)
+For a detailed walk-through, refer to their documentation: [Custom-Android.md](https://github.com/react-native-webview/react-native-webview/blob/v13.10.2/docs/Custom-Android.md).
 
 ## License
 
@@ -67,4 +86,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Created with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
