@@ -22,7 +22,7 @@ export default class HyperWebView extends Component<WebViewProps> {
 }
 
 const HyperWebViewManager: HostComponent<NativeProps> = requireNativeComponent(
-  'HyperWebViewManager'
+  Platform.OS === 'ios' ? 'HyperWebViewManageriOS' : 'HyperWebViewManager'
 );
 
 if (typeof HyperWebViewManager === 'undefined') {
