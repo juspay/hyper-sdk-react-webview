@@ -6,5 +6,5 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
-#import <react-native-webview/RNCWebViewManager.h>
-#import <react-native-webview/RNCWebViewImpl.h>
+#import "RNCWebViewManager.h"
+#import "RNCWebViewImpl.h"
