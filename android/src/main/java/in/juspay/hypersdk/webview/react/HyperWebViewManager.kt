@@ -1,4 +1,4 @@
-package `in`.juspay.hyper.webview.react
+package `in`.juspay.hypersdk.webview.react
 
 import android.content.Intent
 import android.util.Log
