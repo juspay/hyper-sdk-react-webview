@@ -1,4 +1,9 @@
 {
   "extends": "./tsconfig",
-  "exclude": ["example"]
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "exclude": ["example", "**/*.test.*", "**/__tests__/**"]
 }

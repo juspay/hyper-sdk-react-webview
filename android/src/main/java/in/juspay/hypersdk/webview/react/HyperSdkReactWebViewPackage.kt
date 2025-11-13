@@ -6,11 +6,9 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 
 class HyperSdkReactWebViewPackage : ReactPackage {
-    override fun createNativeModules(ignored: ReactApplicationContext): List<NativeModule> {
-        return emptyList()
+    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+        return listOf(HyperWebViewModule(reactContext))
     }
 
-    override fun createViewManagers(ignored: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf(HyperWebViewManager())
-    }
+    override fun createViewManagers(reactContext: ReactApplicationContext) = emptyList<ViewManager<*, *>>()
 }

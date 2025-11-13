@@ -1,8 +1,7 @@
 {
   "name": "hyper-sdk-react-webview",
-  "private": false,
-  "version": "0.1.7",
-  "description": "Custom webview for a hyper-sdk webview integration.",
+  "version": "1.0.0",
+  "description": "React Native WebView with HyperSDK integration for UPI payments. Supports both Old and New Architecture.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -67,6 +66,7 @@
     "lefthook": "^1.6.15",
     "prettier": "^3.0.3",
     "react": "18.2.0",
+    "react-native": "^0.73.0",
     "react-native-builder-bob": "^0.20.0",
     "react-native-webview": "^12.0.0",
     "release-it": "^17.10.0",
@@ -126,7 +126,12 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "example/ios/Pods/",
+    "example/ios/build/",
+    "example/android/build/",
+    "example/android/app/build/",
+    "coverage/"
   ],
   "prettier": {
     "quoteProps": "consistent",

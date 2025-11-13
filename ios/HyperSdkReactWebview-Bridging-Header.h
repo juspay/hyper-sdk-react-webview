@@ -6,5 +6,5 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
-#import "RNCWebViewManager.h"
-#import "RNCWebViewImpl.h"
+#import <React/RCTUIManager.h>
+#import <React/RCTBridge.h>

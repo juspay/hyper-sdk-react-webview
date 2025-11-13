@@ -5,8 +5,7 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
-import `in`.juspay.hyper.webview.react.HyperSdkReactWebViewPackage
-import `in`.juspay.hyper.webview.react.HyperWebViewManager
+import `in`.juspay.hypersdk.webview.react.HyperWebViewManager
 
 class MainActivity : ReactActivity() {
 
