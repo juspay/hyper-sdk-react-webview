@@ -1,6 +1,6 @@
 # Hyper SDK React WebView
 
-A custom webview for integrating hyper-sdk with React Native apps.
+A React Native WebView component with HyperSDK integration for UPI payments. Supports both React Native Old and New Architecture (Fabric).
 
 ## Installation
 
@@ -17,6 +17,15 @@ yarn add hyper-sdk-react-webview
 ```
 
 **NOTE:** Ensure that `react-native-webview` is also installed as a dependency. Although it is declared as a peer dependency, React Native requires it to be a direct dependency to include its native build files.
+
+## React Native New Architecture Support
+
+This library supports both React Native architectures:
+
+- ✅ **Old Architecture** (Bridge) - React Native 0.60+
+- ✅ **New Architecture** (Fabric) - React Native 0.68+ with New Architecture enabled
+
+No code changes are required when migrating between architectures. See [MIGRATION.md](./MIGRATION.md) for detailed migration instructions.
 
 ## Usage
 
@@ -66,19 +75,60 @@ Run `pod install` inside the iOS folder of your app.
 
 You can start using the component in your React Native app:
 
-```js
+```tsx
 import HyperWebView from 'hyper-sdk-react-webview';
 
 const MyWebComponent = () => {
-  return <HyperWebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} iframeIntegration={false} />;
-}
+  return (
+    <HyperWebView
+      source={{ uri: 'https://reactnative.dev/' }}
+      style={{ flex: 1 }}
+      iframeIntegration={false}
+    />
+  );
+};
 ```
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `iframeIntegration` | `boolean` | `false` | Enable iframe integration for UPI payments |
+| ...rest | `WebViewProps` | - | All standard react-native-webview props are supported |
 
 ## How it works
 
-This package provides a thin wrapper around the `WebView` component from [react-native-webview](https://www.npmjs.com/package/react-native-webview). For Android, you can extend the view manager implementation and override functionality as needed. The new class must then be made available as a React Native component.
+This package wraps the `WebView` component from [react-native-webview](https://www.npmjs.com/package/react-native-webview) and integrates HyperSDK services through a native module approach. This design ensures compatibility with both React Native architectures:
 
-For a detailed walk-through, refer to their documentation: [Custom-Android.md](https://github.com/react-native-webview/react-native-webview/blob/v13.10.2/docs/Custom-Android.md).
+### Architecture Overview
+
+1. **JavaScript Layer**: Uses `react-native-webview` directly for maximum compatibility
+2. **Native Module**: `HyperWebViewModule` provides bridge between WebView and HyperSDK services
+3. **Integration**: Automatically attaches HyperWebView services when WebView navigates
+
+### Benefits
+
+- ✅ **Full compatibility** with both Old and New Architecture
+- ✅ **Minimal overhead** - uses official react-native-webview
+- ✅ **Automatic cleanup** - properly manages native resources
+- ✅ **TypeScript support** - full type definitions included
+
+## Troubleshooting
+
+### New Architecture Issues
+
+If you encounter `"Unimplemented component"` errors:
+
+1. Ensure you're using the latest version (v1.0.0+)
+2. Rebuild your project after updating
+3. See [MIGRATION.md](./MIGRATION.md) for detailed troubleshooting
+
+### Performance
+
+For optimal performance:
+- Use `iframeIntegration={true}` only if you are opening juspay payment page in an iframe
+- Implement proper error handling in navigation callbacks
+- Clean up any manual references to avoid memory leaks
 
 ## License
 
