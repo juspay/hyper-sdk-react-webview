@@ -54,7 +54,6 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@react-native/eslint-config": "^0.73.1",
-    "@release-it/conventional-changelog": "^9.0.1",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "commitlint": "^17.0.2",
@@ -70,11 +69,21 @@
     "react-native-builder-bob": "^0.20.0",
     "react-native-webview": "^12.0.0",
     "release-it": "^17.10.0",
-    "turbo": "^1.10.7",
+    "turbo": "^2.11.11",
     "typescript": "^4.9.5"
   },
   "resolutions": {
-    "@types/react": "^18.2.44"
+    "@types/react": "^18.2.44",
+    "@octokit/rest": "20.1.2",
+    "basic-ftp": "^6.2.4",
+    "fast-xml-parser": "^5.12.0",
+    "glob@^9.3.3": "^14.0.4",
+    "glob@^11.0.3": "^14.0.4",
+    "image-size": "^2.0.3",
+    "lodash": "^4.18.1",
+    "tmp": "^0.2.6",
+    "metro@0.80.12": "patch:metro@npm%3A0.80.12#./.yarn/patches/metro-npm-0.80.12-22fc2f7367.patch",
+    "metro@^0.80.3": "patch:metro@npm%3A0.80.12#./.yarn/patches/metro-npm-0.80.12-22fc2f7367.patch"
   },
   "peerDependencies": {
     "react-native": "*",
